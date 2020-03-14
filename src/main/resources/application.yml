@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+  jpa:
+    #Target database
+    database: mysql
+    #控制台显示SQL
+    show-sql: true
+    #Whether to initialize the schema on startup，可不配
+    generate-ddl: false
+    # mappingResources用于指定和实体相关的的hibernate配置文件 可不配，通常在实体上面使用注解
+#    mappingResources:
+#      - classpath: /hibernate/User.hbm.xml
+#      - classpath: /hibernate/Address.hbm.xml
+    # Register OpenEntityManagerInViewInterceptor 默认为true
+    open-in-view: true
+    hibernate:
+      #更新或者创建数据表结构
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
