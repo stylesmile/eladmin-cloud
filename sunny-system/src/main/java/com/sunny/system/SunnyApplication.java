@@ -22,7 +22,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(
         value = {"com.sunny.system.repository"},
         repositoryBaseClass = JpaRepositoryReBuild.class)
-@EntityScan(basePackages = {"com.sunny.console.entity"})
+@EntityScan(basePackages = {"com.sunny.system.entity"})
 public class SunnyApplication {
 
     public static void main(String[] args) {

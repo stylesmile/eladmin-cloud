@@ -9,6 +9,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * 用户实体
@@ -29,14 +30,16 @@ import javax.persistence.*;
 @AllArgsConstructor
 @DynamicInsert
 @EntityListeners(AuditingEntityListener.class)
+
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
-public class User {
+public class User implements Serializable {
 
     /**
      * 自增主键
      */
     @Id
     @GeneratedValue(generator = "jpa-uuid")
+    @Column(name = "id", length = 100)
     private String id;
 
     @Column(name = "name", length = 50)
