@@ -14,7 +14,9 @@
     <artifactId>sunny-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>sunny-common</name>
-
+    <properties>
+        <java.version>11</java.version>
+    </properties>
     <build>
         <plugins>
             <plugin>
