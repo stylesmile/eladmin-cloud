@@ -2,51 +2,33 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>springboot-jpa3-2</artifactId>
+    <groupId>com.sunny</groupId>
+    <artifactId>sunny-admin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-jpa3-2</name>
-    <description>Demo project for Spring Boot</description>
+    <name>sunny-admin</name>
+    <description>sunny-admin based on springboot </description>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
-    <dependencies>
+    <modules>
+        <module>sunny-common</module>
+        <module>sunny-console</module>
+    </modules>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+    <dependencies>
+        <!-- 精简代码工具 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -59,6 +41,7 @@
             </plugin>
         </plugins>
     </build>
+
     <!-- maven 仓库 -->
     <repositories>
         <repository>
@@ -109,4 +92,5 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
+
 </project>
