@@ -8,4 +8,4 @@ spring:
 
 logging:
   level:
-    com.sunny.system: debug
+    com.sunny.system: info
