@@ -9,6 +9,7 @@
         <version>2.2.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.sunny</groupId>
     <artifactId>sunny-admin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -21,7 +22,7 @@
 
     <modules>
         <module>sunny-common</module>
-        <module>sunny-console</module>
+        <module>sunny-system</module>
     </modules>
 
     <dependencies>
@@ -32,7 +33,14 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
     <!-- maven 仓库 -->
     <repositories>
