@@ -1,17 +1,17 @@
 package com.sunny.system.service;
 
+import com.sunny.system.common.tool.QueryHelp;
 import com.sunny.system.repository.BaseJpaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import javax.validation.ValidationException;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,16 +28,15 @@ public class BaseCURDService<M, E, ID extends Serializable> {
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired(required = false)
+    @Resource
     protected BaseJpaRepository<E, ID> repository;
 
     @Transactional
-    public Boolean save(M model) {
-        logger.debug("create object: {}", model.toString());
-        E entity = this.toEntity(model);
-        this.beforeCreate(model, entity);
+    public Boolean save(E entity) {
+        logger.debug("create object: {}", entity.toString());
+        this.beforeCreate(entity);
         entity = this.repository.save(entity);
-        this.afterCreate(model, entity);
+        this.afterCreate(entity);
         return true;
     }
 
@@ -77,10 +76,6 @@ public class BaseCURDService<M, E, ID extends Serializable> {
 
     public E getById(ID id) {
         E e = this.repository.getOne(id);
-//        if (e != null) {
-//            M v = this.toView(e);
-//            return v;
-//        }
         return e;
     }
 
@@ -101,11 +96,9 @@ public class BaseCURDService<M, E, ID extends Serializable> {
     }
 
 
-    public Page<M> search(M m, Pageable pageable) {
+    public <T> Page search(T m, Pageable pageable) {
         Page<E> entitys = this.repository.findAll(this.toFilter(m), pageable);
-        List<M> content = this.toModels(entitys);
-        Page<M> views = new PageImpl<M>(content, pageable, entitys.getTotalElements());
-        return views;
+        return entitys;
     }
 
     protected List<M> toModels(Iterable<E> entities) {
@@ -120,14 +113,6 @@ public class BaseCURDService<M, E, ID extends Serializable> {
         return views;
     }
 
-    protected E toEntity(M model) {
-        E e = null;
-        BeanUtils.copyProperties(model, e);
-        return e;
-    }
-
-    ;
-
     protected M toView(E entity) {
         return null;
     }
@@ -140,16 +125,16 @@ public class BaseCURDService<M, E, ID extends Serializable> {
 
     ;
 
-    protected Specification<E> toFilter(M filter) {
-        return null;
+    protected <T> Specification<E> toFilter(T filter) {
+        return (root, criteriaQuery, criteriaBuilder) -> QueryHelp.getPredicate(root, filter, criteriaBuilder);
     }
 
     ;
 
-    protected void beforeCreate(M model, E entity) {
+    protected void beforeCreate(E entity) {
     }
 
-    protected void afterCreate(M model, E entity) {
+    protected void afterCreate(E entity) {
     }
 
     /**
