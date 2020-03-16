@@ -15,7 +15,7 @@ public class FastJsonUtil {
      * Object转JSON字符串
      *
      * @param object 值
-     * @returnString
+     * @return String
      */
     public static String toJSONString(Object object) {
         return JSONObject.toJSONString(object);
@@ -24,12 +24,11 @@ public class FastJsonUtil {
     /**
      * JSON字符串转Object对象
      *
-     * @param jsonStr
-     * @return Object
+     * @param jsonStr 字符串
+     * @return T
      */
     public static <T> T toObject(String jsonStr, Class<T> type) {
-        T t = JSON.parseObject(jsonStr, type);
-        return t;
+        return JSON.parseObject(jsonStr, type);
     }
 
     /**
@@ -38,9 +37,8 @@ public class FastJsonUtil {
      * @param jsonStr 字符串
      * @return JSONObject
      */
-    public static <T> JSONObject toObject(String jsonStr) {
-        JSONObject jsonObject = JSONObject.parseObject(jsonStr);
-        return jsonObject;
+    public static JSONObject toObject(String jsonStr) {
+        return JSONObject.parseObject(jsonStr);
     }
 
     /**
@@ -49,7 +47,7 @@ public class FastJsonUtil {
      * @param jsonStr 字符串
      * @return Map
      */
-    public static <T> Map toMap(String jsonStr) {
+    public static Map toMap(String jsonStr) {
         return JSON.parseObject(jsonStr);
     }
 
@@ -57,14 +55,14 @@ public class FastJsonUtil {
      * JSON字符串转JSONObject
      *
      * @param o 字符串
-     * @return
+     * @return Map
      */
-    public static <T> Map toMap(Object o) {
-        Map<String, String> params = JSONObject.parseObject(
+    public static Map toMap(Object o) {
+        return JSONObject.parseObject(
                 o.toString(),
-                new TypeReference<Map<String, String>>() {}
+                new TypeReference<Map<String, String>>() {
+                }
         );
-        return params;
     }
 
 }
