@@ -15,7 +15,7 @@ import java.io.Serializable;
  * 用户实体
  *
  * @author chenye
- * 2020-0313
+ * @date 2020-0313
  * 使用JPA注解配置映射关系
  * Entity 告诉JPA这是一个实体类（和数据表映射的类）
  * Table @Table来指定和哪个数据表对应;如果省略默认表名就是user
