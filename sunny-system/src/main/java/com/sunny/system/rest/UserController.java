@@ -9,6 +9,7 @@ import com.sunny.system.entity.User;
 import com.sunny.system.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -29,7 +30,7 @@ public class UserController {
         return Result.success(user);
     }
 
-    @GetMapping("/add")
+    @PostMapping("/add")
     @ApiOperation(value = "add")
     public Result add(UserCreate userAdd) {
         User user = new User();
@@ -39,12 +40,12 @@ public class UserController {
     }
 
 
-    @GetMapping("/delete")
+    @DeleteMapping("/delete")
     public Result delete(@RequestParam("id") String id) {
         return Result.bool(userService.delete(id));
     }
 
-    @GetMapping("/update")
+    @PutMapping("/update")
     public Result update(UserModify userModify) {
         User user = new User();
         BeanUtils.copyProperties(userModify,user);
