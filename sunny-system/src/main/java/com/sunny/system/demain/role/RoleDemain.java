@@ -4,7 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+/**
+ * @author chenye
+ * @date 2020-0316
+ */
 @Data
 @Builder
 @NoArgsConstructor

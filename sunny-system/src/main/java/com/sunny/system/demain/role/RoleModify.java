@@ -11,6 +11,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+/**
+ * @author chenye
+ * @date 2020-0316
+ */
 @Data
 @Builder
 @NoArgsConstructor

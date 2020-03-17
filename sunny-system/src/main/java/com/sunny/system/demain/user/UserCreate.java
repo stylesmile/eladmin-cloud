@@ -11,6 +11,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+/**
+ * @author chenye
+ * @date 2020-0316
+ */
 @Data
 @Builder
 @NoArgsConstructor
@@ -18,13 +22,13 @@ import javax.validation.constraints.Size;
 public class UserCreate {
 
     @NotNull(message = "用户名不能为空")
-    @Size(min = 6, max = 20, message = "用户名长度应该在6-20个字符之间")
+    @Size(min = 4, max = 20, message = "用户名长度应该在6-20个字符之间")
     @Pattern(regexp = RegexpConst.PASSWD_REGEXP, message = "密码长度为6-20位，必须且只能包含数字和字母")
     @ApiModelProperty(value = "用户名", example = "zhagnsan", dataType = "String")
     private String name;
 
 
-    @NotNull(message = "年龄不能为空")
+    @NotNull(message = "密码不能为空")
     @Size(min = 6, max = 20, message = "密码长度应该在6-20个字符之间")
     @ApiModelProperty(value = "年龄", example = "11", dataType = "Integer")
     private String password;
