@@ -27,17 +27,17 @@ public class RoleServiceTests {
     @Test
     public void saveTest() {
         RoleDemain role = RoleDemain.builder()
-                .name("zhagnsan")
+                .name("zhagnsan1")
                 .build();
-        roleService.save(role);
+        //roleService.save(role);
         System.out.println(role);
     }
     @Test
     public void updateTest() {
-        RoleDemain role = RoleDemain.builder()
+        Role role = Role.builder()
                 .name("zhagnsan")
                 .build();
-        roleService.modify(role);
+        roleService.save(role);
         System.out.println(role);
     }
 
