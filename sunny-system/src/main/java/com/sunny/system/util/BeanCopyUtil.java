@@ -9,7 +9,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * created by xxx 2018/7/21
+ * @author chenye
+ * @Date 2020-0316
  */
 public class BeanCopyUtil {
     /**
@@ -19,14 +20,16 @@ public class BeanCopyUtil {
         BeanUtils.copyProperties(source, target, getNullPropertyNames(source));
     }
 
-    public static String[] getNullPropertyNames (Object source) {
+    public static String[] getNullPropertyNames(Object source) {
         final BeanWrapper src = new BeanWrapperImpl(source);
         PropertyDescriptor[] pds = src.getPropertyDescriptors();
 
         Set<String> emptyNames = new HashSet<String>();
-        for(PropertyDescriptor pd : pds) {
+        for (PropertyDescriptor pd : pds) {
             Object srcValue = src.getPropertyValue(pd.getName());
-            if (srcValue == null) emptyNames.add(pd.getName());
+            if (srcValue == null) {
+                emptyNames.add(pd.getName());
+            }
         }
         String[] result = new String[emptyNames.size()];
         return emptyNames.toArray(result);

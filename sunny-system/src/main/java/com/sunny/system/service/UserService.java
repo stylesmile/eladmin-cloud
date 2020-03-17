@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 用户业务处理
  * @author chenye
- * @data 2020-0315
+ * @date 2020-0315
  */
 @Service
 public class UserService extends BaseCURDService<UserDemain, User, String, UserRepository> {
