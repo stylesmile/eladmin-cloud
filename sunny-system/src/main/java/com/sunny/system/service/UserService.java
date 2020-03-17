@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * 用户业务处理
+ *
  * @author chenye
  * @date 2020-0315
  */
@@ -24,18 +25,16 @@ public class UserService extends BaseCURDService<UserDemain, User, String, UserR
     UserRepository userRepository;
 
 
-    public Result login(String name, String password) {
-        User user = userRepository.getUserByName(name);
-        if (name.equals("admin") && password.equals("123456")) {
-            return Result.success();
-        }
+    public Result login(String userName, String password) {
+        User user = userRepository.getUserByUserName(userName);
         if (user == null) {
             return Result.failMessage("用户名不存在");
         }
         if (password.equals(user.getPassword())) {
             return Result.success();
+        } else {
+            return Result.failMessage("密码错误");
         }
-        return Result.failMessage("");
     }
 
     public List<User> getUserList() {
@@ -45,11 +44,11 @@ public class UserService extends BaseCURDService<UserDemain, User, String, UserR
     /**
      * 通过名称模糊查询用户
      *
-     * @param userQuery     条件
-     * @param pageable 页码
+     * @param userQuery 条件
+     * @param pageable  页码
      * @return Page
      */
     public Page<User> getUserByNameLike(UserQuery userQuery, Pageable pageable) {
-        return userRepository.getUserByNameLike(userQuery.getName(),pageable);
+        return userRepository.getUserByUserNameLike(userQuery.getUserName(), pageable);
     }
 }

@@ -37,7 +37,7 @@ public class UserServiceTests {
     @Test
     public void createTest() {
         UserDemain userDemain = UserDemain.builder()
-                .name("zhagnsan2")
+                .userName("zhagnsan2")
                 .build();
         User user = new User();
         BeanUtils.copyProperties(userDemain, user);
@@ -52,7 +52,7 @@ public class UserServiceTests {
     public void updateTest() {
         UserDemain userDemain = UserDemain.builder()
                 .id("4028818870dea3e60170dea3f0a10000")
-                .name("hkhlk2123")
+                .userName("hkhlk2123")
                 .build();
         User user = new User();
         BeanUtils.copyProperties(userDemain, user);
@@ -68,7 +68,7 @@ public class UserServiceTests {
         UserDemain userDemain = UserDemain.builder()
                 .id("4028818870dea3e60170dea3f0a10000")
                 .email("hkhlk123")
-                .name("zhagnsan1")
+                .userName("zhagnsan1")
                 .build();
         User user = new User();
         BeanUtils.copyProperties(userDemain, user);
@@ -81,7 +81,7 @@ public class UserServiceTests {
     @Test
     public void getList(){
         UserQuery userQuery = UserQuery.builder()
-                //.name("zhangsan")
+                //..userName("zhangsan")
                 .build();
         Pageable pageable = PageRequest.of(
                 0, 10, Sort.by(Sort.Direction.DESC, "id"));
@@ -95,7 +95,7 @@ public class UserServiceTests {
     @Test
     public void getList2() {
         UserQuery userQuery = UserQuery.builder()
-                .name("zhangsan")
+                .userName("zhangsan")
                 .build();
 
         Pageable pageable = PageRequest.of(

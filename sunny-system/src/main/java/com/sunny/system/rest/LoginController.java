@@ -27,12 +27,12 @@ public class LoginController {
 
     @ApiOperation(value = "login", notes = "登录")
     @ApiImplicitParams(value = {
-            @ApiImplicitParam(name = "admin", value = "name", required = true, dataType = "String"),
-            @ApiImplicitParam(name = "123456", value = "name", required = true, dataType = "String")
+            @ApiImplicitParam(name = "userName", value = "用户名", example = "admin", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "password", value = "密码", example = "admin", required = true, dataType = "String")
     })
     @PostMapping("/login")
-    public Result login(@RequestParam("name") String name,
-                        @RequestParam("name") String password) {
-        return userService.login(name, password);
+    public Result login(@RequestParam("userName") String userName,
+                        @RequestParam("password") String password) {
+        return userService.login(userName, password);
     }
 }

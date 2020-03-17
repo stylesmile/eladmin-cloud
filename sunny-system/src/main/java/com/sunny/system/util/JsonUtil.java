@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
  * 序列化常用类
  *
  * @author chenye
- * @Data 2020-0316
+ * @date 2020-0316
  */
 public class JsonUtil {
 

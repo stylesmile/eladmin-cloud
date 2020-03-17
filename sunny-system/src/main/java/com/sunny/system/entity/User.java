@@ -42,8 +42,8 @@ public class User implements Serializable {
     @Column(name = "id", length = 100)
     private String id;
 
-    @Column(name = "name", length = 50)
-    private String name;
+    @Column(name = "user_name", length = 50)
+    private String userName;
     /**
      * 省略默认列名就是属性名
      */

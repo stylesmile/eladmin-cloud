@@ -3,15 +3,18 @@ package com.sunny.system.common.result;
 /**
  * 数据返回码
  * 0 : 成功
+ *
  * @author : chenye
  */
 public enum ReturnCode {
 
-    NOT_LOGIN("401","未登录"),
-    SUCCESS ("200","成功"),
-    FAIL ("500","内部失败"),
-	ACCESS_ERROR ("403","禁止访问"),
-	NOT_FOUND ("404","页面未发现");
+    NOT_LOGIN("401", "未登录"),
+    SUCCESS("200", "成功"),
+    FAIL("500", "内部失败"),
+    FAIL_DEAL("500_001", "业务处理失败"),
+    FAIL_DEAL2("500_002", "业务处理失败"),
+    ACCESS_ERROR("403", "禁止访问"),
+    NOT_FOUND("404", "页面未发现");
     private String code;
     private String desc;
 

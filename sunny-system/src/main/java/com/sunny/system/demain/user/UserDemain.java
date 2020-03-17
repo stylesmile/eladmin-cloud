@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class UserDemain {
 
     private String id;
-    private String name;
+    private String userName;
     private String email;
 
 }

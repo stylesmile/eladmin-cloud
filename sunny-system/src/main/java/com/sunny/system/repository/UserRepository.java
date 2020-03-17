@@ -18,17 +18,17 @@ public interface UserRepository extends
     /**
      * 通过名称获取用户
      *
-     * @param name 名称
+     * @param userName 名称
      * @return User
      */
-    User getUserByName(@Param("name") String name);
+    User getUserByUserName(@Param("userName") String userName);
 
     /**
      * 通过名称模糊查询用户
      *
-     * @param name     条件
+     * @param userName     条件
      * @param pageable 页码
      * @return Page
      */
-    Page<User> getUserByNameLike(String name, Pageable pageable);
+    Page<User> getUserByUserNameLike(String userName, Pageable pageable);
 }

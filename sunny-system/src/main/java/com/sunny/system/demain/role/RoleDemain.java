@@ -15,6 +15,6 @@ import lombok.NoArgsConstructor;
 public class RoleDemain {
 
     private Integer id;
-    private String name;
+    private String userName;
 
 }

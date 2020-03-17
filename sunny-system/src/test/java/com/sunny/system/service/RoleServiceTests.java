@@ -27,7 +27,7 @@ public class RoleServiceTests {
     @Test
     public void saveTest() {
         RoleDemain role = RoleDemain.builder()
-                .name("zhagnsan1")
+                .userName("zhagnsan1")
                 .build();
         //roleService.save(role);
         System.out.println(role);
@@ -35,7 +35,7 @@ public class RoleServiceTests {
     @Test
     public void updateTest() {
         Role role = Role.builder()
-                .name("zhagnsan")
+                .userName("zhagnsan")
                 .build();
         roleService.save(role);
         System.out.println(role);

@@ -26,7 +26,7 @@ public class UserQuery implements Serializable {
 
     @JpaQuery(type = JpaQuery.Type.INNER_LIKE)
     @ApiModelProperty(value = "名称", example = "1231", dataType = "String")
-    private String name;
+    private String userName;
 
     @JpaQuery(type = JpaQuery.Type.INNER_LIKE)
     @ApiModelProperty(value = "邮箱", example = "sdf", dataType = "String")

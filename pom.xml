@@ -14,7 +14,7 @@
     <artifactId>sunny-admin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>sunny-admin</name>
-    <description>sunny-admin based on springboot </description>
+    <description>sunny-admin based on springboot</description>
 
     <properties>
         <java.version>11</java.version>
