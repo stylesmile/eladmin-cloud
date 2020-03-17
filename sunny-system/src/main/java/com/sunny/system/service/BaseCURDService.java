@@ -5,6 +5,7 @@ import com.sunny.system.repository.BaseJpaRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -24,18 +25,18 @@ import java.util.List;
  * @data 2020-0315
  */
 
-public class BaseCURDService<M, E, ID extends Serializable> {
+public class BaseCURDService<M, E, ID extends Serializable, P extends BaseJpaRepository> {
 
     protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Resource
-    protected BaseJpaRepository<E, ID> repository;
+    @Autowired(required = false)
+    protected P repository;
 
     @Transactional
     public Boolean save(E entity) {
         logger.debug("create object: {}", entity.toString());
         this.beforeCreate(entity);
-        entity = this.repository.save(entity);
+        entity = (E) this.repository.save(entity);
         this.afterCreate(entity);
         return true;
     }
@@ -53,36 +54,36 @@ public class BaseCURDService<M, E, ID extends Serializable> {
         throw new ValidationException("数据异常或指定id不存在");
     }
 
-    @Transactional
-    public M modify(M target) {
-        ID id = this.getID(target);
-        if (id == null) {
-            throw new ValidationException("id不能为空！");
-        }
-        logger.debug("id: {}", id);
-        E entity = this.repository.getOne(id);
-        if (entity != null) {
-            this.beforeModify(target, entity);
-            entity = this.repository.save(entity);
-            this.afterModify(target, entity);
-            return this.toView(entity);
-        }
-        throw new ValidationException("数据异常或指定id不存在");
-    }
+//    @Transactional
+//    public M modify(M target) {
+//        ID id = this.getID(target);
+//        if (id == null) {
+//            throw new ValidationException("id不能为空！");
+//        }
+//        logger.debug("id: {}", id);
+//        E entity = this.repository.getOne(id);
+//        if (entity != null) {
+//            this.beforeModify(target, entity);
+//            entity = this.repository.save(entity);
+//            this.afterModify(target, entity);
+//            return this.toView(entity);
+//        }
+//        throw new ValidationException("数据异常或指定id不存在");
+//    }
 
     /**
      * 如果有缓存实现 ，则先从缓存中获取
      */
 
     public E getById(ID id) {
-        E e = this.repository.getOne(id);
+        E e = (E) this.repository.getOne(id);
         return e;
     }
 
 
-    public long count(M e) {
-        return this.repository.count(toFilter(e));
-    }
+//    public long count(M e) {
+//        return this.repository.count(toFilter(e));
+//    }
 
 
     public boolean exists(ID id) {
@@ -90,14 +91,15 @@ public class BaseCURDService<M, E, ID extends Serializable> {
     }
 
 
-    public List<M> list(E e, Sort sort) {
-        //List<E> entitys = this.repository.findAll(e, sort);
-        return null;
+    public List<E> list(E e, Sort sort) {
+        List<E> entitys = this.repository.findAll(this.toFilter(e), sort);
+        return entitys;
     }
 
 
     public <T> Page search(T m, Pageable pageable) {
-        Page<E> entitys = this.repository.findAll(this.toFilter(m), pageable);
+        Specification<E> specification = this.toFilter(m);
+        Page<E> entitys = this.repository.findAll(specification, pageable);
         return entitys;
     }
 
@@ -128,8 +130,6 @@ public class BaseCURDService<M, E, ID extends Serializable> {
     protected <T> Specification<E> toFilter(T filter) {
         return (root, criteriaQuery, criteriaBuilder) -> QueryHelp.getPredicate(root, filter, criteriaBuilder);
     }
-
-    ;
 
     protected void beforeCreate(E entity) {
     }
@@ -168,8 +168,5 @@ public class BaseCURDService<M, E, ID extends Serializable> {
         BeanUtils.copyProperties(source, target, ignoreProperties);
     }
 
-    protected E getOne(ID entityId) {
-        return this.repository.getOne(entityId);
-    }
 
 }
