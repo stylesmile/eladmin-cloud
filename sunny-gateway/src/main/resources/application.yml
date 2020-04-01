@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-cloud-gateway-sample
+  cloud:
+    gateway:
+      routes:
+        #id：路由的ID
+        - id: blog
+          #uri：匹配路由的转发地址
+          uri: http://test.com
+          predicates:
+            # 匹配路径转发
+            - Path=/api-boot-datasource-switch.html
+# 端口号
+server:
+  port: 9090
+
+
