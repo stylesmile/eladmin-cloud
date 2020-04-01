@@ -1,21 +1,30 @@
+spring:
+  application:
+    name: registry
+
 server:
-  port: 9010
+  port: 8761
+
+
 
 eureka:
   client:
-    #±íÊ¾ÊÇ·ñ½«×Ô¼º×¢²áµ½Eureka Server£¬Ä¬ÈÏÎªtrue¡£
+    #è¡¨ç¤ºæ˜¯å¦å°†è‡ªå·±æ³¨å†Œåˆ°Eureka Serverï¼Œé»˜è®¤ä¸ºtrueã€‚
     registerWithEureka: true
-    #±íÊ¾ÊÇ·ñ´ÓEureka Server»ñÈ¡×¢²áĞÅÏ¢£¬Ä¬ÈÏÎªtrue¡£
+    #è¡¨ç¤ºæ˜¯å¦ä»Eureka Serverè·å–æ³¨å†Œä¿¡æ¯ï¼Œé»˜è®¤ä¸ºtrueã€‚
     fetchRegistry: false
-    #ÉèÖÃÓëEureka Server½»»¥µÄµØÖ·£¬²éÑ¯·şÎñºÍ×¢²á·şÎñ¶¼ĞèÒªÒÀÀµÕâ¸ö
+    #è®¾ç½®ä¸Eureka Serveräº¤äº’çš„åœ°å€ï¼ŒæŸ¥è¯¢æœåŠ¡å’Œæ³¨å†ŒæœåŠ¡éƒ½éœ€è¦ä¾èµ–è¿™ä¸ª
     service-url:
-      defaultZone: http://127.0.0.1:9010/eureka/
-    #Ã¿30Ãë²¶»ñÒ»´Î
+      defaultZone: http://127.0.0.1:8761/eureka/
+    #æ¯30ç§’æ•è·ä¸€æ¬¡
     registry-fetch-interval-seconds: 30
   instance:
     prefer-ip-address: true
-    #statusÏÔÊ¾
+    #statusæ˜¾ç¤º
     instance-id: 127.0.0.1
 
 
 
+#logging:
+#  level:
+#    com.registry: debug
