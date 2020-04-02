@@ -1,14 +1,16 @@
-package com.sunny.regist;
+package com.sunny.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @author chenye
- * @date 2020-0401
+ * @date 2020-0402
  */
-@EnableEurekaServer
+@EnableEurekaClient
+@EnableConfigServer
 @SpringBootApplication
 public class RegistApplication {
 
