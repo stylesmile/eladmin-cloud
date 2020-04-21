@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.0.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <groupId>com.sunny</groupId>
     <artifactId>sunny-cloud</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>1.0</version>
 
-    <name>sunny-admin</name>
-    <description>sunny-cloud based on springboot</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>sunny-common</module>
+        <module>sunny-logging</module>
+        <module>sunny-system</module>
+        <module>sunny-tools</module>
+		<module>sunny-monitor</module>
+        <module>sunny-generator</module>
+    </modules>
+
+    <name>sunny-cloud分布式系统</name>
+    <url>http://auauz.net</url>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+    </parent>
 
     <properties>
-        <!--<java.version>11</java.version>-->
-        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
-
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
         <jedis.version>2.9.0</jedis.version>
         <log4jdbc.version>1.16</log4jdbc.version>
         <swagger.version>2.9.2</swagger.version>
@@ -31,25 +43,23 @@
         <mapstruct.version>1.2.0.Final</mapstruct.version>
     </properties>
 
-    <modules>
-        <module>sunny-common</module>
-        <module>sunny-logging</module>
-        <module>sunny-console</module>
-        <module>sunny-generator</module>
-        <module>sunny-tools</module>
-        <module>sunny-system</module>
-        <!--<module>sunny-gateway</module>
-        <module>sunny-registry</module>-->
-        <!--<module>sunny-config</module>-->
-
-    </modules>
-
     <dependencies>
-        <!-- 精简代码工具 -->
+        <!--lombok插件-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!--Spring boot start-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
         <dependency>
@@ -57,15 +67,115 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- spring cache -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--Spring boot end-->
+
+        <!--spring2.0集成redis所需common-pool2-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>${commons-pool2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
 
+        <!--监控sql日志-->
+        <dependency>
+            <groupId>org.bgee.log4jdbc-log4j2</groupId>
+            <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
+            <version>${log4jdbc.version}</version>
+        </dependency>
+
+        <!--Mysql依赖包-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- druid数据源驱动 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+        <!--https://gitee.com/lionsoul/ip2region/tree/v1.4-release/-->
+        <dependency>
+            <groupId>org.lionsoul</groupId>
+            <artifactId>ip2region</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.17</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/xerces/xercesImpl -->
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <!--mapStruct依赖-->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${mapstruct.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.whvcse</groupId>
+            <artifactId>easy-captcha</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>1.20</version>
+        </dependency>
     </dependencies>
 
-    <!--<dependencyManagement>
+
+    <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -76,7 +186,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
--->
     <build>
         <plugins>
             <!-- 打包时跳过测试 -->
@@ -88,63 +197,30 @@
                 </configuration>
             </plugin>
         </plugins>
-        <!--<plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-        </plugins>-->
     </build>
 
-    <!-- maven 仓库 -->
     <repositories>
         <repository>
-            <id>aliyun-nexus</id>
-            <name>aliyun-nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
         </repository>
     </repositories>
-    <!--插件仓库-->
+
     <pluginRepositories>
         <pluginRepository>
-            <id>aliyun-nexus</id>
-            <name>aliyun-nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+            <id>public</id>
+            <name>aliyun nexus</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
-        </pluginRepository>
-        <pluginRepository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/libs-milestone</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
         </pluginRepository>
     </pluginRepositories>
-
 </project>

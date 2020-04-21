@@ -4,13 +4,12 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import lombok.extern.slf4j.Slf4j;
 import sunny.stylesmile.common.annotation.Query;
-
 import javax.persistence.criteria.*;
 import java.lang.reflect.Field;
 import java.util.*;
 
 /**
- * @author Stylesmile
+ * @author Zheng Jie
  * @date 2019-6-4 14:59:48
  */
 @Slf4j

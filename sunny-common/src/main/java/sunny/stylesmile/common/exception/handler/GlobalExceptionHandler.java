@@ -5,19 +5,17 @@ import sunny.stylesmile.common.exception.BadRequestException;
 import sunny.stylesmile.common.exception.EntityExistException;
 import sunny.stylesmile.common.exception.EntityNotFoundException;
 import sunny.stylesmile.common.utils.ThrowableUtil;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
 import java.util.Objects;
 import static org.springframework.http.HttpStatus.*;
 
 /**
- * @author Stylesmile
- * @date 2019-11-23
+ * @author Zheng Jie
+ * @date 2018-11-23
  */
 @Slf4j
 @RestControllerAdvice
@@ -94,6 +92,6 @@ public class GlobalExceptionHandler {
      * 统一返回
      */
     private ResponseEntity<ApiError> buildResponseEntity(ApiError apiError) {
-        return new ResponseEntity<>(apiError, HttpStatus.valueOf(apiError.getStatus()));
+        return new ResponseEntity<>(apiError, valueOf(apiError.getStatus()));
     }
 }

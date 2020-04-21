@@ -5,9 +5,10 @@ import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.poi.excel.BigExcelWriter;
 import cn.hutool.poi.excel.ExcelUtil;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import sunny.stylesmile.common.exception.BadRequestException;
+import org.apache.poi.util.IOUtils;
 import org.springframework.web.multipart.MultipartFile;
+
 import javax.activation.MimetypesFileTypeMap;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +23,8 @@ import java.util.Map;
 
 /**
  * File工具类，扩展 hutool 工具包
- * @author Stylesmile
- * @date 2019-12-27
+ * @author Zheng Jie
+ * @date 2018-12-27
  */
 public class FileUtil extends cn.hutool.core.io.FileUtil {
 

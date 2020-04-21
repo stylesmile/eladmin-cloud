@@ -1,8 +1,7 @@
 package sunny.stylesmile.common.utils;
 
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import static sunny.stylesmile.common.utils.EncryptUtils.*;
 
 public class EncryptUtilsTest {
 
@@ -12,7 +11,7 @@ public class EncryptUtilsTest {
     @Test
     public void testDesEncrypt() {
         try {
-            assertEquals("7772841DC6099402", desEncrypt("123456"));
+            Assert.assertEquals("7772841DC6099402", EncryptUtils.desEncrypt("123456"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -24,7 +23,7 @@ public class EncryptUtilsTest {
     @Test
     public void testDesDecrypt() {
         try {
-            assertEquals("123456", desDecrypt("7772841DC6099402"));
+            Assert.assertEquals("123456", EncryptUtils.desDecrypt("7772841DC6099402"));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
- * @author Stylesmile
+ * @author Zheng Jie
  * @Date 2019年10月24日20:48:53
  */
 @Getter

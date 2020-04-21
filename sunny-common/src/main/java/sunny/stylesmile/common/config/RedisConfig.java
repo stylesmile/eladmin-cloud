@@ -5,8 +5,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.codec.digest.DigestUtils;
 import sunny.stylesmile.common.utils.StringUtils;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
@@ -31,8 +31,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Stylesmile
- * @date 2019-11-24
+ * @author Zheng Jie
+ * @date 2018-11-24
  */
 @Slf4j
 @Configuration

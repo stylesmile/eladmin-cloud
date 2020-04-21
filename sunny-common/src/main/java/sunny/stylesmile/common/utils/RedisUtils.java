@@ -6,8 +6,6 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.*;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
-
-import javax.annotation.Resource;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +16,6 @@ import java.util.concurrent.TimeUnit;
 @SuppressWarnings({"unchecked","all"})
 public class RedisUtils {
 
-    @Resource
     private RedisTemplate<Object, Object> redisTemplate;
     @Value("${jwt.online-key}")
     private String onlineKey;

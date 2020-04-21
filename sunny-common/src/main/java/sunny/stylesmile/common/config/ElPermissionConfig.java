@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author Stylesmile
+ * @author Zheng Jie
  */
 @Service(value = "el")
 public class ElPermissionConfig {
