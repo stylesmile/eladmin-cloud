@@ -4,19 +4,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.sunny</groupId>
-        <artifactId>sunny-admin</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <artifactId>sunny-cloud</artifactId>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sunny-logging</artifactId>
     <name>sunny-logging</name>
 
+    <properties>
+        <mapstruct.version>1.2.0.Final</mapstruct.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.sunny</groupId>
             <artifactId>sunny-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.2-SNAPSHOT</version>
+        </dependency>
+
+        <!--mapStruct依赖-->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+            <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${mapstruct.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

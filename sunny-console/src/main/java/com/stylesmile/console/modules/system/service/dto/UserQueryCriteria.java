@@ -10,7 +10,7 @@ import java.util.Set;
 
 /**
  * @author Stylesmile
- * @date 2018-11-23
+ * @date 2019-11-23
  */
 @Data
 public class UserQueryCriteria implements Serializable {

@@ -6,23 +6,42 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
+        <version>2.1.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>com.sunny</groupId>
-    <artifactId>sunny-admin</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>sunny-cloud</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
+
     <name>sunny-admin</name>
-    <description>sunny-admin based on springboot</description>
+    <description>sunny-cloud based on springboot</description>
 
     <properties>
-        <java.version>11</java.version>
+        <!--<java.version>11</java.version>-->
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+
+        <java.version>1.8</java.version>
+        <jedis.version>2.9.0</jedis.version>
+        <log4jdbc.version>1.16</log4jdbc.version>
+        <swagger.version>2.9.2</swagger.version>
+        <fastjson.version>1.2.54</fastjson.version>
+        <druid.version>1.1.10</druid.version>
+        <commons-pool2.version>2.5.0</commons-pool2.version>
+        <mapstruct.version>1.2.0.Final</mapstruct.version>
     </properties>
 
     <modules>
         <module>sunny-common</module>
+        <module>sunny-logging</module>
+        <module>sunny-console</module>
+        <module>sunny-generator</module>
+        <module>sunny-tools</module>
         <module>sunny-system</module>
+        <!--<module>sunny-gateway</module>
+        <module>sunny-registry</module>-->
+        <!--<module>sunny-config</module>-->
+
     </modules>
 
     <dependencies>
@@ -32,14 +51,49 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
     </dependencies>
+
+    <!--<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+-->
     <build>
         <plugins>
+            <!-- 打包时跳过测试 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+        <!--<plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
-        </plugins>
+        </plugins>-->
     </build>
 
     <!-- maven 仓库 -->

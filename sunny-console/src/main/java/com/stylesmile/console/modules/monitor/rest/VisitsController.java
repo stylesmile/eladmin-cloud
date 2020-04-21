@@ -13,7 +13,7 @@ import sunny.stylesmile.common.utils.RequestHolder;
 
 /**
  * @author Stylesmile
- * @date 2018-12-13
+ * @date 2019-12-13
  */
 @RestController
 @RequestMapping("/api/visits")

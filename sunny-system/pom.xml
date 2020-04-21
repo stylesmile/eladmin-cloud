@@ -5,10 +5,8 @@
 
     <parent>
         <groupId>com.sunny</groupId>
-        <artifactId>sunny-admin</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
-        <!-- lookup parent from repository -->
+        <artifactId>sunny-cloud</artifactId>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
 
     <groupId>com.example</groupId>
@@ -44,7 +42,7 @@
         <dependency>
             <groupId>com.sunny</groupId>
             <artifactId>sunny-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
 
         <dependency>

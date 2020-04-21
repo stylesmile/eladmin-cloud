@@ -2,6 +2,9 @@ package com.stylesmile.console;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
@@ -14,16 +17,16 @@ import sunny.stylesmile.common.utils.SpringContextHolder;
 
 /**
  * @author Stylesmile
- * @date 2018/11/15 9:20:19
+ * @date 2019/11/15
  */
 @EnableAsync
 @RestController
 @SpringBootApplication
 @EnableTransactionManagement
-public class AppRun {
+public class SunnyConsoleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppRun.class, args);
+        SpringApplication.run(SunnyConsoleApplication.class, args);
     }
 
     @Bean
@@ -40,6 +43,7 @@ public class AppRun {
 
     /**
      * 访问首页提示
+     *
      * @return /
      */
     @GetMapping("/")

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 /**
  * @author Stylesmile
- * @date 2018-11-22
+ * @date 2019-11-22
  */
 public interface UserAvatarRepository extends JpaRepository<UserAvatar, Long>, JpaSpecificationExecutor<UserAvatar> {
 

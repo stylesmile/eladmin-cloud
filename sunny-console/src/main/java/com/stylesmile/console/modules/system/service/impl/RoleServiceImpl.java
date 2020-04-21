@@ -23,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 import sunny.stylesmile.common.exception.EntityExistException;
 import sunny.stylesmile.common.utils.*;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.*;
@@ -30,7 +31,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author Stylesmile
- * @date 2018-12-03
+ * @date 2019-12-03
  */
 @Service
 @CacheConfig(cacheNames = "role")

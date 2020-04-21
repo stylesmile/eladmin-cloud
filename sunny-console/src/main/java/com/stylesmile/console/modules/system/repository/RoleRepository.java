@@ -9,7 +9,7 @@ import java.util.Set;
 
 /**
  * @author Stylesmile
- * @date 2018-12-03
+ * @date 2019-12-03
  */
 @SuppressWarnings("all")
 public interface RoleRepository extends JpaRepository<Role, Long>, JpaSpecificationExecutor<Role> {

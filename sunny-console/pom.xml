@@ -7,6 +7,7 @@
         <artifactId>sunny-cloud</artifactId>
         <version>0.0.2-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>sunny-console</artifactId>
@@ -26,8 +27,8 @@
             <version>0.0.2-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
-                    <groupId>me.zhengjie</groupId>
-                    <artifactId>eladmin-common</artifactId>
+                    <groupId>com.sunny</groupId>
+                    <artifactId>sunny-common</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -39,10 +40,10 @@
             <version>0.0.2-SNAPSHOT</version>
         </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-websocket</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
 
         <!--jwt-->
         <dependency>
@@ -67,35 +68,16 @@
             <artifactId>quartz</artifactId>
         </dependency>
 
-		<dependency>
-			<groupId>ch.ethz.ganymed</groupId>
-			<artifactId>ganymed-ssh2</artifactId>
-			<version>build210</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.jcraft</groupId>
-			<artifactId>jsch</artifactId>
-			<version>0.1.55</version>
-		</dependency>
-
         <dependency>
-            <groupId>com.github.whvcse</groupId>
-            <artifactId>easy-captcha</artifactId>
-            <version>1.6.2</version>
+            <groupId>ch.ethz.ganymed</groupId>
+            <artifactId>ganymed-ssh2</artifactId>
+            <version>build210</version>
         </dependency>
 
-        <!-- druid数据源驱动 -->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid.version}</version>
-        </dependency>
-        <!--监控sql日志-->
-        <dependency>
-            <groupId>org.bgee.log4jdbc-log4j2</groupId>
-            <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
-            <version>${log4jdbc.version}</version>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.55</version>
         </dependency>
 
     </dependencies>

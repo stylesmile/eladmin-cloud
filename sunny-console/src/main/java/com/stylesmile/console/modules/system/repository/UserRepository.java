@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * @author Stylesmile
- * @date 2018-11-22
+ * @date 2019-11-22
  */
 public interface UserRepository extends JpaRepository<User, Long>, JpaSpecificationExecutor<User> {
 

@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 /**
  * 代码生成配置
- * @author Zheng Jie
+ * @author Stylesmile
  * @date 2019-01-03
  */
 @Data

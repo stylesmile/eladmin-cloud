@@ -36,7 +36,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author Stylesmile
- * @date 2018-11-23
+ * @date 2019-11-23
  * 授权、根据token获取用户详细信息
  */
 @Slf4j

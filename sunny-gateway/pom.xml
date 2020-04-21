@@ -5,8 +5,7 @@
     <parent>
         <groupId>com.sunny</groupId>
         <artifactId>sunny-admin</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
 
     <groupId>com.gateway</groupId>
@@ -20,6 +19,7 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>

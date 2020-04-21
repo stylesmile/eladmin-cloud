@@ -1,9 +1,9 @@
 package sunny.stylesmile.generator.service.impl;
 
+import sunny.stylesmile.common.utils.StringUtils;
 import sunny.stylesmile.generator.domain.GenConfig;
 import sunny.stylesmile.generator.repository.GenConfigRepository;
 import sunny.stylesmile.generator.service.GenConfigService;
-import me.zhengjie.utils.StringUtils;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 
 /**
- * @author Zheng Jie
+ * @author Stylesmile
  * @date 2019-01-14
  */
 @Service

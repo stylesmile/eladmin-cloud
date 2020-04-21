@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 /**
  * @author Stylesmile
- * @date 2018-11-30
+ * @date 2019-11-30
  */
 @Getter
 @Setter

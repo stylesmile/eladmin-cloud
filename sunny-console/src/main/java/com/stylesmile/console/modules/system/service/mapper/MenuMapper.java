@@ -8,7 +8,7 @@ import org.mapstruct.ReportingPolicy;
 
 /**
  * @author Stylesmile
- * @date 2018-12-17
+ * @date 2019-12-17
  */
 @Mapper(componentModel = "spring",unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface MenuMapper extends BaseMapper<MenuDto, Menu> {
