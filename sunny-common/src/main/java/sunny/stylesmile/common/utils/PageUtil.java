@@ -5,8 +5,8 @@ import java.util.*;
 
 /**
  * 分页工具
- * @author Zheng Jie
- * @date 2018-12-10
+ * @author Stylesmile
+ * @date 2019-12-10
  */
 public class PageUtil extends cn.hutool.core.util.PageUtil {
 
