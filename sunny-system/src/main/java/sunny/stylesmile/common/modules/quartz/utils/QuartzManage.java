@@ -12,7 +12,7 @@ import java.util.Date;
 import static org.quartz.TriggerBuilder.newTrigger;
 
 /**
- * @author Zheng Jie
+ * @author Stylesmile
  * @date 2019-01-07
  */
 @Slf4j

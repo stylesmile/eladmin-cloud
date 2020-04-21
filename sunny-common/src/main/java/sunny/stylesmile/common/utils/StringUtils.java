@@ -16,7 +16,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * @author Zheng Jie
+ * @author Stylesmile
  * 字符串工具类, 继承org.apache.commons.lang3.StringUtils类
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
@@ -160,7 +160,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
             if(address.charAt(address.length()-1) == symbol){
                 address = address.substring(0,address.length() - 1);
             }
-            return address.equals(ElAdminConstant.REGION)?"内网IP":address;
+            return address.equals(SunnyConstant.REGION)?"内网IP":address;
         } catch (Exception e) {
             e.printStackTrace();
         }finally {

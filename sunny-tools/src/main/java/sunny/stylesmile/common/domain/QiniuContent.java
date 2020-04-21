@@ -9,8 +9,8 @@ import java.sql.Timestamp;
 
 /**
  * 上传成功后，存储结果
- * @author Zheng Jie
- * @date 2018-12-31
+ * @author Stylesmile
+ * @date 2019-12-31
  */
 @Data
 @Entity

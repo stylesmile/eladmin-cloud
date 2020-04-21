@@ -6,8 +6,8 @@ import java.sql.Timestamp;
 import java.util.Set;
 
 /**
- * @author Zheng Jie
- * @date 2018-11-23
+ * @author Stylesmile
+ * @date 2019-11-23
  */
 @Data
 public class RoleDto implements Serializable {

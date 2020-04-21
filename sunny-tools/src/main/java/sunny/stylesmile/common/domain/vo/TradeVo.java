@@ -9,8 +9,8 @@ import java.sql.Timestamp;
 
 /**
  * 交易详情，按需应该存入数据库，这里存入数据库，仅供临时测试
- * @author Zheng Jie
- * @date 2018-12-31
+ * @author Stylesmile
+ * @date 2019-12-31
  */
 @Data
 public class TradeVo {

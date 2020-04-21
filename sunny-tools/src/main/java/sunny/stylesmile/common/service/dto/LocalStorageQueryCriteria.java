@@ -7,7 +7,7 @@ import java.util.List;
 import sunny.stylesmile.common.annotation.Query;
 
 /**
-* @author Zheng Jie
+* @author Stylesmile
 * @date 2019-09-05
 */
 @Data

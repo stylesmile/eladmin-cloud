@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-27
+ * @author Stylesmile
+ * @date 2019-12-27
  */
 public interface PictureService {
 

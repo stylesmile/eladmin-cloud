@@ -3,7 +3,7 @@ package sunny.stylesmile.common.service;
 import sunny.stylesmile.common.domain.GenConfig;
 
 /**
- * @author Zheng Jie
+ * @author Stylesmile
  * @date 2019-01-14
  */
 public interface GenConfigService {

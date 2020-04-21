@@ -4,8 +4,8 @@ import sunny.stylesmile.common.domain.VerificationCode;
 import sunny.stylesmile.common.domain.vo.EmailVo;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-26
+ * @author Stylesmile
+ * @date 2019-12-26
  */
 public interface VerificationCodeService {
 

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * @author Zheng Jie
+ * @author Stylesmile
  * @date 2019-01-14
  */
 public interface ColumnInfoRepository extends JpaRepository<ColumnInfo,Long> {

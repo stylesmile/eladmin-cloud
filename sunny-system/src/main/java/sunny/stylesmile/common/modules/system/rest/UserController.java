@@ -29,7 +29,7 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import sunny.stylesmile.common.utils.ElAdminConstant;
+import sunny.stylesmile.common.utils.SunnyConstant;
 import sunny.stylesmile.common.utils.PageUtil;
 import sunny.stylesmile.common.utils.SecurityUtils;
 
@@ -39,8 +39,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * @author Zheng Jie
- * @date 2018-11-23
+ * @author Stylesmile
+ * @date 2019-11-23
  */
 @Api(tags = "系统：用户管理")
 @RestController
@@ -193,7 +193,7 @@ public class UserController {
         if(!passwordEncoder.matches(password, userDto.getPassword())){
             throw new BadRequestException("密码错误");
         }
-        VerificationCode verificationCode = new VerificationCode(code, ElAdminConstant.RESET_MAIL,"email",user.getEmail());
+        VerificationCode verificationCode = new VerificationCode(code, SunnyConstant.RESET_MAIL,"email",user.getEmail());
         verificationCodeService.validated(verificationCode);
         userService.updateEmail(userDto.getUsername(),user.getEmail());
         return new ResponseEntity<>(HttpStatus.OK);

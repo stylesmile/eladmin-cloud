@@ -8,8 +8,8 @@ import java.util.List;
 
 /**
  * 构建前端路由时用到
- * @author Zheng Jie
- * @date 2018-12-20
+ * @author Stylesmile
+ * @date 2019-12-20
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_EMPTY)

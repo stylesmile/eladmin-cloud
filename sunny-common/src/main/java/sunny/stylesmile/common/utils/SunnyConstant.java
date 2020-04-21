@@ -2,10 +2,10 @@ package sunny.stylesmile.common.utils;
 
 /**
  * 常用静态常量
- * @author Zheng Jie
- * @date 2018-12-26
+ * @author Stylesmile
+ * @date 2019-12-26
  */
-public class ElAdminConstant {
+public class SunnyConstant {
 
     public static final String RESET_PASS = "重置密码";
 

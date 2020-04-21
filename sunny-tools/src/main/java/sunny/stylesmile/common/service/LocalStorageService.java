@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
-* @author Zheng Jie
+* @author Stylesmile
 * @date 2019-09-05
 */
 public interface LocalStorageService {

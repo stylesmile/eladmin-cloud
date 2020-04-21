@@ -16,8 +16,8 @@ import sunny.stylesmile.common.modules.system.service.dto.UserDto;
 import java.util.Optional;
 
 /**
- * @author Zheng Jie
- * @date 2018-11-22
+ * @author Stylesmile
+ * @date 2019-11-22
  */
 @Service("userDetailsService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)

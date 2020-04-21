@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-27
+ * @author Stylesmile
+ * @date 2019-12-27
  */
 @Slf4j
 @Service(value = "pictureService")
@@ -72,7 +72,7 @@ public class PictureServiceImpl implements PictureService {
         HashMap<String, Object> paramMap = new HashMap<>(1);
         paramMap.put("smfile", file);
         // 上传文件
-        String result= HttpRequest.post(ElAdminConstant.Url.SM_MS_URL + "/v2/upload")
+        String result= HttpRequest.post(SunnyConstant.Url.SM_MS_URL + "/v2/upload")
                 .header("Authorization", token)
                 .form(paramMap)
                 .timeout(20000)
@@ -116,7 +116,7 @@ public class PictureServiceImpl implements PictureService {
     @Override
     public void synchronize() {
         //链式构建请求
-        String result = HttpRequest.get(ElAdminConstant.Url.SM_MS_URL + "/v2/upload_history")
+        String result = HttpRequest.get(SunnyConstant.Url.SM_MS_URL + "/v2/upload_history")
                 //头信息，多个头信息多次调用此方法即可
                 .header("Authorization", token)
                 .timeout(20000)

@@ -6,8 +6,8 @@ import lombok.Setter;
 import javax.validation.constraints.NotBlank;
 
 /**
- * @author Zheng Jie
- * @date 2018-11-30
+ * @author Stylesmile
+ * @date 2019-11-30
  */
 @Getter
 @Setter

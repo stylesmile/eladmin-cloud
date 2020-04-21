@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 /**
  * 列的数据信息
- * @author Zheng Jie
+ * @author Stylesmile
  * @date 2019-01-02
  */
 @Data

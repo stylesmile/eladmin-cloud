@@ -3,8 +3,8 @@ package sunny.stylesmile.common.exception;
 import org.springframework.util.StringUtils;
 
 /**
- * @author Zheng Jie
- * @date 2018-11-23
+ * @author Stylesmile
+ * @date 2019-11-23
  */
 public class EntityNotFoundException extends RuntimeException {
 

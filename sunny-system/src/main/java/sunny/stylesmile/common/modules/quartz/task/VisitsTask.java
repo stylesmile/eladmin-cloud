@@ -4,8 +4,8 @@ import sunny.stylesmile.common.modules.monitor.service.VisitsService;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-25
+ * @author Stylesmile
+ * @date 2019-12-25
  */
 @Component
 public class VisitsTask {

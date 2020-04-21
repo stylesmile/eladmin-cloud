@@ -5,8 +5,8 @@ import sunny.stylesmile.common.domain.EmailConfig;
 import org.springframework.scheduling.annotation.Async;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-26
+ * @author Stylesmile
+ * @date 2019-12-26
  */
 public interface EmailService {
 

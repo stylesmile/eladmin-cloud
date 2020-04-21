@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * sm.ms图床
  *
- * @author Zheng Jie
+ * @author Stylesmile
  * @date 2019-6-4 09:52:09
  */
 @Data

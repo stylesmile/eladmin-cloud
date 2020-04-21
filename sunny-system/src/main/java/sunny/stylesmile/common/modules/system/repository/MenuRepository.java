@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-17
+ * @author Stylesmile
+ * @date 2019-12-17
  */
 @SuppressWarnings("all")
 public interface MenuRepository extends JpaRepository<Menu, Long>, JpaSpecificationExecutor<Menu> {

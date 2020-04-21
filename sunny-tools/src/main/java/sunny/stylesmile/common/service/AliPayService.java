@@ -4,8 +4,8 @@ import sunny.stylesmile.common.domain.vo.TradeVo;
 import sunny.stylesmile.common.domain.AlipayConfig;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-31
+ * @author Stylesmile
+ * @date 2019-12-31
  */
 public interface AliPayService {
 

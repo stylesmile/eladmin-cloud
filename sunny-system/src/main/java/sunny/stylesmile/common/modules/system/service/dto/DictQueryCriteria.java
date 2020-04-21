@@ -4,7 +4,7 @@ import lombok.Data;
 import sunny.stylesmile.common.annotation.Query;
 
 /**
- * @author Zheng Jie
+ * @author Stylesmile
  * 公共查询类
  */
 @Data

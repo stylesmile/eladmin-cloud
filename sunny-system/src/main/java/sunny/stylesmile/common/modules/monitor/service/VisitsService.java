@@ -4,8 +4,8 @@ import org.springframework.scheduling.annotation.Async;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-13
+ * @author Stylesmile
+ * @date 2019-12-13
  */
 public interface VisitsService {
 

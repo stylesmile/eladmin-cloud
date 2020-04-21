@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 初始化站点统计
- * @author Zheng Jie
+ * @author Stylesmile
  */
 @Component
 public class VisitsInitialization implements ApplicationRunner {

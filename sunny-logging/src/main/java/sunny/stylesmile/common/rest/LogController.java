@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author Zheng Jie
- * @date 2018-11-24
+ * @author Stylesmile
+ * @date 2019-11-24
  */
 @RestController
 @RequestMapping("/api/logs")

@@ -28,8 +28,8 @@ import static springfox.documentation.schema.AlternateTypeRules.newRule;
 
 /**
  * api页面 /swagger-ui.html
- * @author Zheng Jie
- * @date 2018-11-23
+ * @author Stylesmile
+ * @date 2019-11-23
  */
 
 @Configuration
@@ -68,7 +68,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("eladmin 接口文档")
+                .title("sunny 接口文档")
                 .version("2.3")
                 .build();
     }

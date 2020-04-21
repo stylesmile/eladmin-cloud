@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-13
+ * @author Stylesmile
+ * @date 2019-12-13
  */
 @Repository
 public interface VisitsRepository extends JpaRepository<Visits,Long> {

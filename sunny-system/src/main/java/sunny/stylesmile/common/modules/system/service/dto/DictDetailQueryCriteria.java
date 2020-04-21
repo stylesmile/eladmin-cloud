@@ -4,7 +4,7 @@ import lombok.Data;
 import sunny.stylesmile.common.annotation.Query;
 
 /**
-* @author Zheng Jie
+* @author Stylesmile
 * @date 2019-04-10
 */
 @Data

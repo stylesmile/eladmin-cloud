@@ -7,7 +7,7 @@ import javax.servlet.MultipartConfigElement;
 import java.io.File;
 
 /**
- * @date 2018-12-28
+ * @date 2019-12-28
  * @author https://blog.csdn.net/llibin1024530411/article/details/79474953
  */
 @Configuration
@@ -19,7 +19,7 @@ public class MultipartConfig {
     @Bean
     MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
-        String location = System.getProperty("user.home") + "/.eladmin/file/tmp";
+        String location = System.getProperty("user.home") + "/.sunny/file/tmp";
         File tmpFile = new File(location);
         if (!tmpFile.exists()) {
             tmpFile.mkdirs();

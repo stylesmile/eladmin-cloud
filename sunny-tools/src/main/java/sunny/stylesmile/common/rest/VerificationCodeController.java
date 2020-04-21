@@ -6,14 +6,14 @@ import sunny.stylesmile.common.domain.VerificationCode;
 import sunny.stylesmile.common.domain.vo.EmailVo;
 import sunny.stylesmile.common.service.EmailService;
 import sunny.stylesmile.common.service.VerificationCodeService;
-import sunny.stylesmile.common.utils.ElAdminConstant;
+import sunny.stylesmile.common.utils.SunnyConstant;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-26
+ * @author Stylesmile
+ * @date 2019-12-26
  */
 @RestController
 @RequestMapping("/api/code")
@@ -32,7 +32,7 @@ public class VerificationCodeController {
     @PostMapping(value = "/resetEmail")
     @ApiOperation("重置邮箱，发送验证码")
     public ResponseEntity<Object> resetEmail(@RequestBody VerificationCode code) throws Exception {
-        code.setScenes(ElAdminConstant.RESET_MAIL);
+        code.setScenes(SunnyConstant.RESET_MAIL);
         EmailVo emailVo = verificationCodeService.sendEmail(code);
         emailService.send(emailVo,emailService.find());
         return new ResponseEntity<>(HttpStatus.OK);
@@ -44,7 +44,7 @@ public class VerificationCodeController {
         VerificationCode code = new VerificationCode();
         code.setType("email");
         code.setValue(email);
-        code.setScenes(ElAdminConstant.RESET_MAIL);
+        code.setScenes(SunnyConstant.RESET_MAIL);
         EmailVo emailVo = verificationCodeService.sendEmail(code);
         emailService.send(emailVo,emailService.find());
         return new ResponseEntity<>(HttpStatus.OK);

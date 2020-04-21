@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
-* @author Zheng Jie
+* @author Stylesmile
 * @date 2019-03-25
 */
 public interface DeptService {

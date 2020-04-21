@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author Zheng Jie
+ * @author Stylesmile
  */
 @Component
 public class JwtAccessDeniedHandler implements AccessDeniedHandler {

@@ -3,8 +3,8 @@ package sunny.stylesmile.common.base;
 import java.util.List;
 
 /**
- * @author Zheng Jie
- * @date 2018-11-23
+ * @author Stylesmile
+ * @date 2019-11-23
  */
 public interface BaseMapper<D, E> {
 

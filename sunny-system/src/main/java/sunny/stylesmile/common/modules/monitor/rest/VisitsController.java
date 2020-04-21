@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-13
+ * @author Stylesmile
+ * @date 2019-12-13
  */
 @RestController
 @RequestMapping("/api/visits")

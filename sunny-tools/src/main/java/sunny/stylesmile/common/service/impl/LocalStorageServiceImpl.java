@@ -30,7 +30,7 @@ import sunny.stylesmile.common.utils.*;
 import javax.servlet.http.HttpServletResponse;
 
 /**
-* @author Zheng Jie
+* @author Stylesmile
 * @date 2019-09-05
 */
 @Service

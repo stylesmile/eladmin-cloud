@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 日志查询类
- * @author Zheng Jie
+ * @author Stylesmile
  * @date 2019-6-4 09:23:07
  */
 @Data
