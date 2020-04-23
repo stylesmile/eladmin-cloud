@@ -3,15 +3,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.sunny</groupId>
-        <artifactId>sunny-cloud</artifactId>
-        <version>0.0.2-SNAPSHOT</version>
+        <groupId>com.eladmin</groupId>
+        <artifactId>cloud</artifactId>
+        <version>1.1</version>
     </parent>
 
     <groupId>com.sunny</groupId>
-    <artifactId>regist</artifactId>
+    <artifactId>cloud-registry</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sunny-regist</name>
+
+    <name>cloud-registry</name>
+
     <description>Demo project for Spring Boot</description>
 
     <properties>

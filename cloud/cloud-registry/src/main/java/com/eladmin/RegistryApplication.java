@@ -1,4 +1,4 @@
-package com.sunny.config;
+package com.eladmin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +10,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
  */
 @EnableEurekaServer
 @SpringBootApplication
-public class RegistApplication {
+public class RegistryApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RegistApplication.class, args);
+        SpringApplication.run(RegistryApplication.class, args);
     }
 
 }

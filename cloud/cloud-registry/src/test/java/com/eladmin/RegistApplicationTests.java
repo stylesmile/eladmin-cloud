@@ -1,4 +1,4 @@
-package com.sunny.config;
+package com.eladmin;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

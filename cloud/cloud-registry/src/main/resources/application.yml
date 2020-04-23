@@ -3,8 +3,8 @@ spring:
     name: registry
   security:
     user:
-      name: 123456
-      password: admin
+      name: admin
+      password: 123456
 
 server:
   port: 8761
