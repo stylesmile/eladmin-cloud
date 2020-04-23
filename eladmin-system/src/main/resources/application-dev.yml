@@ -1,5 +1,9 @@
 #配置数据源
 spring:
+  security:
+    user:
+      name: admin
+      password: 123456
   datasource:
     druid:
       db-type: com.alibaba.druid.pool.DruidDataSource
@@ -70,3 +74,20 @@ file:
   # 文件大小 /M
   maxSize: 100
   avatarMaxSize: 5
+
+eureka:
+  client:
+    #表示是否将自己注册到Eureka Server，默认为true。
+    registerWithEureka: true
+    #表示是否从Eureka Server获取注册信息，默认为true。
+    fetchRegistry: true
+    #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+      #defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@127.0.0.1:8761/eureka/
+    #每30秒捕获一次
+    registryFetchIntervalSeconds: 30
+  instance:
+    prefer-ip-address: true
+    #status显示
+    instance-id: 127.0.0.1-system

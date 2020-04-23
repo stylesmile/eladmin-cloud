@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Zheng Jie
  * @date 2018/11/15 9:20:19
  */
+
+@EnableEurekaClient
 @EnableAsync
 @RestController
 @SpringBootApplication

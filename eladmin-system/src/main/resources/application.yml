@@ -2,6 +2,8 @@ server:
   port: 8000
 
 spring:
+  application:
+    name: system-server
   freemarker:
     check-template-location: false
   profiles:
