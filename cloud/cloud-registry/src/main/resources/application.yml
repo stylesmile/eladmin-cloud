@@ -1,6 +1,6 @@
 spring:
   application:
-    name: registry
+    name: cloud-registry-eureka
   security:
     user:
       name: admin
@@ -14,19 +14,19 @@ server:
 eureka:
   client:
     #表示是否将自己注册到Eureka Server，默认为true。
-    registerWithEureka: false
+    registerWithEureka: true
     #表示是否从Eureka Server获取注册信息，默认为true。
-    fetchRegistry: false
+    fetchRegistry: true
     #设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个
     service-url:
-      #defaultZone: http://127.0.0.1:8761/eureka/
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@127.0.0.1:${server.port}/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+      #defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@127.0.0.1:${server.port}/eureka/
     #每30秒捕获一次
     registry-fetch-interval-seconds: 30
   instance:
     prefer-ip-address: true
     #status显示
-    instance-id: 127.0.0.1
+    instance-id: 127.0.0.1-erreka-registry-server
 
 
 
